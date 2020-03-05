@@ -8,7 +8,7 @@
             <h2> {{ valueCurrent }} <small>{{ unitMeasurement}}</small> </h2>
         </div>
         <div class="card-footer text-muted text-center">
-            {{ time }}
+            {{ time | date:'medium' }}
           </div>
       </div>
 </div>

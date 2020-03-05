@@ -22,4 +22,8 @@ export class FirebaseService {
     });
   }
 
+  getCurrentData() {
+    return this._firebase.list('data', ref => ref.limitToLast(1)).valueChanges();
+  }
+
 }

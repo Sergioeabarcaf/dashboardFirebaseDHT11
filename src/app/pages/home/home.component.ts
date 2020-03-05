@@ -8,6 +8,8 @@ import { FirebaseService } from '../../services/firebase.service';
 })
 export class HomeComponent implements OnInit {
 
+  params = ['Temperatura', 'Humedad'];
+
   constructor(public firebaseService: FirebaseService) { }
 
   ngOnInit(): void {
