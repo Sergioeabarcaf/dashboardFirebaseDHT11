@@ -7,13 +7,15 @@ import { AppComponent } from './app.component';
 import { GraphLineComponent } from './components/graph-line/graph-line.component';
 import { HomeComponent } from './pages/home/home.component';
 import { CardComponent } from './components/card/card.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     GraphLineComponent,
     HomeComponent,
-    CardComponent
+    CardComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

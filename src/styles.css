@@ -18,7 +18,13 @@ html, body {
 }
 
 #container {
-    height: 100vh;
+    min-height: 95vh;
     background-color: white;
     color: black;
 }
+
+.footer {
+    min-height: 5vh;
+    background-color: black;
+    color: white;
+} 
