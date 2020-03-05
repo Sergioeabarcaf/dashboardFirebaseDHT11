@@ -7,10 +7,10 @@
         </tr>
     </thead>
     <tbody>
-        <tr>
-            <th scope="row"> 22 marzo 2020 - 09:31</th>
-            <td>31 °C</td>
-            <td>45 %HR</td>
+        <tr *ngFor="let data of _firebaseService.data24">
+            <th scope="row"> {{ data.epochTime | date: 'medium'}}</th>
+            <td>{{ data.tem }} °C</td>
+            <td>{{ data.hum }} %HR</td>
         </tr>
     </tbody>
 </table>
