@@ -6,6 +6,17 @@ html, body {
     margin: 0;
 }
 
+.title {
+    color: white;
+    background-color: gray;
+}
+
+.title2 {
+    color: gray;
+    background-color: white;
+    border-color: gray;
+}
+
 #container {
     height: 100vh;
     background-color: white;
