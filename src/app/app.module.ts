@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { DatePipe } from '@angular/common'
 import { NgxEchartsModule } from 'ngx-echarts';
 import { AngularFireModule } from '@angular/fire';
 
@@ -28,7 +29,7 @@ import { TableComponent } from './components/table/table.component';
     AngularFireModule.initializeApp(environment.firebase),
     NgxEchartsModule
   ],
-  providers: [],
+  providers: [DatePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

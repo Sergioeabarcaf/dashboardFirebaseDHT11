@@ -10,7 +10,7 @@ export class HomeComponent implements OnInit {
 
   params = ['Temperatura', 'Humedad'];
 
-  constructor(public firebaseService: FirebaseService) { }
+  constructor(public _firebaseService: FirebaseService) { }
 
   ngOnInit(): void {
   }

@@ -9,7 +9,7 @@ import { FirebaseData } from '../interfaces/firebase-data';
 })
 export class FirebaseService {
 
-  data24: FirebaseData[];
+  data: FirebaseData[];
   currentData: FirebaseData;
 
   constructor(public _firebase: AngularFireDatabase) {
@@ -17,9 +17,9 @@ export class FirebaseService {
   }
 
   getDataLast24Hours() {
-    this._firebase.list('data', ref => ref.limitToLast(10)).valueChanges().subscribe( (data: FirebaseData[]) => {
+    this._firebase.list('data', ref => ref.limitToLast(288)).valueChanges().subscribe( (data: FirebaseData[]) => { 
       data.reverse();
-      this.data24 = data;
+      this.data = data;
       this.currentData = data[0];
     });
   }

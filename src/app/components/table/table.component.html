@@ -7,7 +7,7 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let data of _firebaseService.data24">
+        <tr *ngFor="let data of _firebaseService.data">
             <th scope="row"> {{ data.time | date: 'medium' : "UTC"}}</th>
             <td>{{ data.tem }} °C</td>
             <td>{{ data.hum }} %HR</td>

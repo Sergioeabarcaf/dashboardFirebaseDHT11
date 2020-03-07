@@ -1,5 +1,5 @@
 export interface FirebaseData {
-    time: String,
+    time: string,
     hum: number,
     tem: number
 }

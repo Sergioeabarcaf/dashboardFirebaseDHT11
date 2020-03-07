@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { DatePipe } from '@angular/common'
 import { EChartOption } from 'echarts';
+import { FirebaseService } from '../../services/firebase.service';
 
 @Component({
   selector: 'graph-line',
@@ -8,7 +10,7 @@ import { EChartOption } from 'echarts';
 })
 export class GraphLineComponent implements OnInit {
 
-  chartOption: EChartOption = {
+  chartOption = {
     tooltip: {
         trigger: 'item',
         formatter: '{a} <br/>{b} : {c}'
@@ -20,7 +22,7 @@ export class GraphLineComponent implements OnInit {
     xAxis: {
       type: 'category',
       name: 'Hora',
-      data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+      data: []
     },
     yAxis: {
       type: 'value'
@@ -28,20 +30,32 @@ export class GraphLineComponent implements OnInit {
     series: [
       {
         name: 'Temperatura',
-        data: [820, 932, 901, 934, 1290, 1330, 1320],
+        data: [],
         type: 'line',
         smooth: true
       },
       {
         name: 'Humedad',
-        data: [100, 102, 103, 150, 200, 400, 500],
+        data: [],
         type: 'line',
         smooth: true
       }
     ]
   }
 
-  constructor() { }
+  constructor(public _firebaseService: FirebaseService, public datePipe: DatePipe) {
+    this.chartOption.xAxis.data = this._firebaseService.data.map( (data) => {
+      return datePipe.transform(data.time, 'HH:mm', 'UTC');
+    });
+
+    this.chartOption.series[0].data = this._firebaseService.data.map( (data) => {
+      return data.tem;
+    });
+
+    this.chartOption.series[1].data = this._firebaseService.data.map( (data) => {
+      return data.hum;
+    });
+  }
 
   ngOnInit(): void {
   }
