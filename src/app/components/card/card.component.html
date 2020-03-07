@@ -2,13 +2,28 @@
 <div class="col-12 py-4">
     <div class="card">
         <div class="card-header">
-          {{ paramName }}
+          Temperatura
         </div>
         <div class="card-body text-center">
-            <h2> {{ valueCurrent }} <small>{{ unitMeasurement}}</small> </h2>
+            <h2> {{ _firebaseService.currentData.tem }} <small>ºC</small> </h2>
         </div>
         <div class="card-footer text-muted text-center">
-            {{ time | date:'medium' }}
+            {{ _firebaseService.currentData.time | date:'medium' : "UTC" }}
           </div>
       </div>
+</div>
+
+<!-- Card Humidity -->
+<div class="col-12 py-4">
+  <div class="card">
+      <div class="card-header">
+        Humedad
+      </div>
+      <div class="card-body text-center">
+          <h2> {{ _firebaseService.currentData.hum }} <small>%HR</small> </h2>
+      </div>
+      <div class="card-footer text-muted text-center">
+          {{ _firebaseService.currentData.time | date:'medium' : "UTC" }}
+        </div>
+    </div>
 </div>
