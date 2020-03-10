@@ -24,4 +24,8 @@ export class FirebaseService {
     });
   }
 
+  getDataLineChart() {
+    return this._firebase.list('data', ref => ref.limitToLast(288)).valueChanges();
+  }
+
 }

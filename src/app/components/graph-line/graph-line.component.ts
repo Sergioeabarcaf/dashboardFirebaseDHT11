@@ -41,7 +41,7 @@ export class GraphLineComponent implements OnInit {
         smooth: true
       }
     ]
-  }
+  };
 
   constructor(public _firebaseService: FirebaseService, public datePipe: DatePipe) {
     this.chartOption.xAxis.data = this._firebaseService.data.map( (data) => {
@@ -57,7 +57,6 @@ export class GraphLineComponent implements OnInit {
     });
   }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void { }
 
 }
